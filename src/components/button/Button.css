@@ -1,0 +1,24 @@
+.btn-container {
+  width: 65px;
+  height: 65px;
+  margin: 2px;
+}
+
+.btn {
+  font-size: 16px;
+  font-family: "Calculator", sans-serif;
+  font-weight: bold;
+  width: 100%;
+  height: 100%;
+  border: none;
+
+}
+
+.btn.ac {
+  background-color: orange;
+}
+
+.btn.enter {
+  height: calc(200% + 4px);
+  background-color: aliceblue;
+}

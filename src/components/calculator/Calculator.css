@@ -1,0 +1,11 @@
+.calculator {
+  overflow: auto;
+  margin: 7% auto;
+  width: 300px;
+  height: auto;
+  display: block;
+  background-color: lightgray;
+  box-shadow: 5px 10px 10px darkgrey;
+  padding: 10px 8px;
+  border-radius: 10px;
+}

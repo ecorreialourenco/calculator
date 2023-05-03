@@ -1,13 +1,24 @@
-import Screen from "../screen/Screen";
 import { useState } from "react";
-import Keypad from "../keypad/Keypad";
-import { setCalculations } from "../../utils/setCalculations";
-import "./Calculator.css";
 
-function Calculator() {
+export const useCalculations = () => {
   const [display, setDisplay] = useState<string>("0");
   const [action, setAction] = useState<string | null>(null);
   const [count, setCount] = useState<string>("0");
+
+  const setCalculations = (act: string, val1: number, val2: number) => {
+    switch (act) {
+      case "+":
+        return val1 + val2;
+      case "-":
+        return val1 - val2;
+      case "/":
+        return val1 / val2;
+      case "*":
+        return val1 * val2;
+      default:
+        return 0;
+    }
+  };
 
   const handleSetAction = (val: string) => {
     switch (val) {
@@ -81,12 +92,5 @@ function Calculator() {
     }
   };
 
-  return (
-    <div className="calculator">
-      <Screen value={display !== "0" ? display : count} />
-      <Keypad setAction={handleSetAction} setCount={handleSetCount} />
-    </div>
-  );
-}
-
-export default Calculator;
+  return { display, count, handleSetAction, handleSetCount };
+};

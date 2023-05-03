@@ -1,17 +1,14 @@
 import { ScreenProps } from "../../models/screen.modal";
 import "./Screen.css";
 
-const Screen: React.FC<ScreenProps> = (props) => {
-  return (
-    <div className="screen">
-      <input
-        type="text"
-        className="screen-input"
-        value={props.value}
-        readOnly
-      />
-    </div>
-  );
-};
-
-export default Screen;
+export const Screen: React.FC<ScreenProps> = (props) => (
+  <div className="screen">
+    <input
+      data-testid="screenInput"
+      type="text"
+      className="screen-input"
+      value={props.value}
+      readOnly
+    />
+  </div>
+);

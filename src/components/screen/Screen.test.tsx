@@ -1,14 +1,12 @@
-import { render } from "@testing-library/react";
-import Screen from "./Screen";
+import { render, screen } from "@testing-library/react";
+import { Screen } from "../Screen";
 
 describe("Screen", () => {
   it("Render Screen", () => {
     const inputValue = "1";
-    const component = render(<Screen value={inputValue} />);
-    const input = component.baseElement.querySelector(
-      "input"
-    ) as HTMLInputElement;
+    render(<Screen value={inputValue} />);
 
+    const input = screen.getByTestId("screenInput") as HTMLInputElement;
     expect(input.value).toBe(inputValue);
   });
 });

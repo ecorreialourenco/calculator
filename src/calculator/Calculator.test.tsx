@@ -70,7 +70,6 @@ describe("Calculator", () => {
     );
 
     const input = screen.getByTestId("screenInput") as HTMLInputElement;
-
     expect(input.value).toBe("12");
   });
 
@@ -82,7 +81,6 @@ describe("Calculator", () => {
     );
 
     const input = screen.getByTestId("screenInput") as HTMLInputElement;
-
     expect(input.value).toBe("8");
   });
 
@@ -136,7 +134,6 @@ describe("Calculator", () => {
     }
 
     const input = screen.getByTestId("screenInput") as HTMLInputElement;
-
     expect(input.value).toBe("5.555555555555555555555555");
   });
 
@@ -147,7 +144,6 @@ describe("Calculator", () => {
     fireEvent.click(screen.getByText("="));
 
     const input = screen.getByTestId("screenInput") as HTMLInputElement;
-
     expect(input.value).toBe("1");
   });
 
@@ -158,7 +154,6 @@ describe("Calculator", () => {
     fireEvent.click(screen.getByText("%"));
 
     const input = screen.getByTestId("screenInput") as HTMLInputElement;
-
     expect(input.value).toBe("1");
   });
 });

@@ -5,10 +5,9 @@ describe("Calculator", () => {
   it("Render Calculator and display the value 10.5", () => {
     render(<Calculator />);
 
-    fireEvent.click(screen.getByText("1"));
-    fireEvent.click(screen.getByText("0"));
-    fireEvent.click(screen.getByText("."));
-    fireEvent.click(screen.getByText("5"));
+    ["1", "0", ".", "5"].forEach((value: string) =>
+      fireEvent.click(screen.getByText(value))
+    );
 
     const input = screen.getByTestId("screenInput") as HTMLInputElement;
 
@@ -18,10 +17,9 @@ describe("Calculator", () => {
   it("Sum 2 numbers", () => {
     render(<Calculator />);
 
-    fireEvent.click(screen.getByText("5"));
-    fireEvent.click(screen.getByText("+"));
-    fireEvent.click(screen.getByText("2"));
-    fireEvent.click(screen.getByText("="));
+    ["5", "+", "2", "="].forEach((value: string) =>
+      fireEvent.click(screen.getByText(value))
+    );
 
     const input = screen.getByTestId("screenInput") as HTMLInputElement;
 
@@ -31,10 +29,9 @@ describe("Calculator", () => {
   it("Subtract 2 numbers", () => {
     render(<Calculator />);
 
-    fireEvent.click(screen.getByText("5"));
-    fireEvent.click(screen.getByText("-"));
-    fireEvent.click(screen.getByText("2"));
-    fireEvent.click(screen.getByText("="));
+    ["5", "-", "2", "="].forEach((value: string) =>
+      fireEvent.click(screen.getByText(value))
+    );
 
     const input = screen.getByTestId("screenInput") as HTMLInputElement;
 
@@ -44,10 +41,9 @@ describe("Calculator", () => {
   it("Multiply 2 numbers", () => {
     render(<Calculator />);
 
-    fireEvent.click(screen.getByText("5"));
-    fireEvent.click(screen.getByText("*"));
-    fireEvent.click(screen.getByText("9"));
-    fireEvent.click(screen.getByText("="));
+    ["5", "*", "9", "="].forEach((value: string) =>
+      fireEvent.click(screen.getByText(value))
+    );
 
     const input = screen.getByTestId("screenInput") as HTMLInputElement;
 
@@ -57,10 +53,9 @@ describe("Calculator", () => {
   it("Divide 2 numbers", () => {
     render(<Calculator />);
 
-    fireEvent.click(screen.getByText("9"));
-    fireEvent.click(screen.getByText("/"));
-    fireEvent.click(screen.getByText("3"));
-    fireEvent.click(screen.getByText("="));
+    ["9", "/", "3", "="].forEach((value: string) =>
+      fireEvent.click(screen.getByText(value))
+    );
 
     const input = screen.getByTestId("screenInput") as HTMLInputElement;
 
@@ -70,12 +65,9 @@ describe("Calculator", () => {
   it("Sum 2 numbers and subtract another", () => {
     render(<Calculator />);
 
-    fireEvent.click(screen.getByText("9"));
-    fireEvent.click(screen.getByText("+"));
-    fireEvent.click(screen.getByText("4"));
-    fireEvent.click(screen.getByText("-"));
-    fireEvent.click(screen.getByText("1"));
-    fireEvent.click(screen.getByText("="));
+    ["9", "+", "4", "-", "1", "="].forEach((value: string) =>
+      fireEvent.click(screen.getByText(value))
+    );
 
     const input = screen.getByTestId("screenInput") as HTMLInputElement;
 
@@ -85,12 +77,9 @@ describe("Calculator", () => {
   it("Get percentage", () => {
     render(<Calculator />);
 
-    fireEvent.click(screen.getByText("1"));
-    fireEvent.click(screen.getByText("0"));
-    fireEvent.click(screen.getByText("-"));
-    fireEvent.click(screen.getByText("2"));
-    fireEvent.click(screen.getByText("0"));
-    fireEvent.click(screen.getByText("%"));
+    ["1", "0", "-", "2", "0", "%"].forEach((value: string) =>
+      fireEvent.click(screen.getByText(value))
+    );
 
     const input = screen.getByTestId("screenInput") as HTMLInputElement;
 
@@ -100,8 +89,9 @@ describe("Calculator", () => {
   it("Clear selected value", () => {
     render(<Calculator />);
 
-    fireEvent.click(screen.getByText("1"));
-    fireEvent.click(screen.getByText("0"));
+    ["1", "0"].forEach((value: string) =>
+      fireEvent.click(screen.getByText(value))
+    );
 
     const firstInputValue = screen.getByTestId(
       "screenInput"
@@ -116,8 +106,9 @@ describe("Calculator", () => {
 
     expect(secondInputValue.value).toBe("0");
 
-    fireEvent.click(screen.getByText("2"));
-    fireEvent.click(screen.getByText("0"));
+    ["2", "0"].forEach((value: string) =>
+      fireEvent.click(screen.getByText(value))
+    );
 
     const fourthInputValue = screen.getByTestId(
       "screenInput"

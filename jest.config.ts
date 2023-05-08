@@ -1,7 +1,7 @@
 import type { Config } from "@jest/types";
 
 const config: Config.InitialOptions = {
-  verbose: false,
+  verbose: true,
   testEnvironment: "jsdom",
   setupFilesAfterEnv: ["<rootDir>/src/setupTests.ts"],
   moduleNameMapper: {
@@ -9,6 +9,11 @@ const config: Config.InitialOptions = {
   },
   automock: false,
   resetMocks: false,
+  collectCoverageFrom: [
+    "src/**/*.{jsx,tsx}",
+    "!<rootDir>/node_modules/",
+    "!<rootDir>/path/to/dir/",
+  ],
   //transform: { "^.+\\.tsx?$": "ts-jest" },
 };
 

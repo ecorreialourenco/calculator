@@ -7,9 +7,7 @@ export const Button: React.FC<ButtonProps> = ({
   onClick,
 }) => {
   const handleClick = () => {
-    if (onClick) {
-      onClick(value);
-    }
+    onClick(value);
   };
 
   return (

@@ -1,4 +1,4 @@
-import Calculator from "./calculator/Calculator";
+import Calculator from "./components/calculator/Calculator";
 import "./App.css";
 
 function App() {

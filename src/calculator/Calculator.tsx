@@ -1,5 +1,5 @@
-import { Keypad } from "../components/Keypad";
-import { Screen } from "../components/Screen";
+import { Keypad } from "../components/Keypad/Keypad";
+import { Screen } from "../components/Screen/Screen";
 import { useCalculations } from "../hooks/useCalculations";
 import "./Calculator.css";
 

@@ -7,6 +7,7 @@ const config: Config.InitialOptions = {
   moduleNameMapper: {
     "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js",
   },
+  modulePaths: ["<rootDir>"],
   automock: false,
   resetMocks: false,
   collectCoverageFrom: [
@@ -14,7 +15,6 @@ const config: Config.InitialOptions = {
     "!<rootDir>/node_modules/",
     "!<rootDir>/path/to/dir/",
   ],
-  //transform: { "^.+\\.tsx?$": "ts-jest" },
 };
 
 export default config;

@@ -1,5 +1,5 @@
+import { Button } from "..";
 import { KeypadProps } from "../../models/keypad.modal";
-import { Button } from "../Button/Button";
 import "./Keypad.css";
 
 export const Keypad: React.FC<KeypadProps> = ({ setAction, setCount }) => (

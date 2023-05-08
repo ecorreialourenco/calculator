@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { Screen } from "./Screen";
+import { Screen } from ".";
 
 describe("Screen", () => {
   it("Render Screen", () => {

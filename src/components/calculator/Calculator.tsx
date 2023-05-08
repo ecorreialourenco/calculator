@@ -3,7 +3,7 @@ import { Screen } from "../Screen/Screen";
 import { useCalculations } from "../../hooks/useCalculations";
 import "./Calculator.css";
 
-function Calculator() {
+export const Calculator = () => {
   const { display, count, handleSetAction, handleSetCount } = useCalculations();
 
   return (
@@ -12,6 +12,4 @@ function Calculator() {
       <Keypad setAction={handleSetAction} setCount={handleSetCount} />
     </div>
   );
-}
-
-export default Calculator;
+};
